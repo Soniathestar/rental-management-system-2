@@ -1,0 +1,327 @@
+/* Shared by UnitsPage and LeasesPage. Uses the same tokens as TenantsPage.css. */
+.manage-page {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 32px clamp(20px, 4vw, 64px);
+}
+
+.manage-page h1,
+.manage-page h2 {
+  margin: 0;
+}
+
+.manage-page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.manage-page-heading h1 {
+  color: var(--ink);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+
+.manage-page-heading p {
+  max-width: 680px;
+  margin: 10px 0 0;
+  line-height: 1.6;
+}
+
+.manage-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.manage-card p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.manage-page .manage-card:has(.manage-form) {
+  display: block;
+}
+
+.tenant-residences {
+  display: grid;
+  justify-content: stretch;
+}
+
+.tenant-residences h2,
+.tenant-residence h3 {
+  margin: 0;
+}
+
+.tenant-residence {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.tenant-residence p {
+  margin: 8px 0;
+}
+
+.tenant-residence dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.tenant-residence dl div {
+  display: grid;
+  gap: 4px;
+}
+
+.tenant-residence dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tenant-residence dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.manage-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.manage-form {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.manage-field {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.manage-field input,
+.manage-field select,
+.manage-field textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 400;
+}
+
+.manage-field [aria-invalid="true"] {
+  border-color: #b3261e;
+}
+
+.manage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.manage-button {
+  padding: 9px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.manage-button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.manage-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.manage-button.is-secondary {
+  background: var(--surface);
+  color: var(--accent);
+}
+
+.manage-button.is-danger {
+  border-color: #b3261e;
+  background: var(--surface);
+  color: #b3261e;
+}
+
+.manage-badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.manage-badge.is-occupied,
+.manage-badge.is-active {
+  background: #e3f3e8;
+  color: #17592f;
+}
+
+.manage-badge.is-vacant {
+  background: #fdf0dc;
+  color: #7a4b00;
+}
+
+.manage-badge.is-reserved {
+  background: #fff3cd;
+  color: #785900;
+}
+
+.manage-badge.is-ended,
+.manage-badge.is-terminated,
+.manage-badge.is-declined,
+.manage-badge.is-expired,
+.manage-badge.is-waitlisted {
+  background: #ececec;
+  color: #444;
+}
+
+.manage-badge.is-pending {
+  background: #fff3cd;
+  color: #785900;
+}
+
+.manage-badge.is-approved {
+  background: #e3f3e8;
+  color: #17592f;
+}
+
+.manage-badge.is-offered {
+  background: #fff3cd;
+  color: #785900;
+}
+
+.manage-badge.is-paid,
+.manage-badge.is-leased {
+  background: #e3f3e8;
+  color: #17592f;
+}
+
+.manage-status {
+  color: var(--muted);
+}
+
+.manage-error {
+  color: #b3261e;
+}
+
+.manage-dialog-backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(5px);
+}
+
+.manage-dialog {
+  width: min(100%, 760px);
+  max-height: min(92vh, 900px);
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.3);
+}
+
+.manage-dialog-heading {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px clamp(20px, 3vw, 28px);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+}
+
+.manage-dialog-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.35rem;
+  letter-spacing: -0.035em;
+}
+
+.manage-dialog-heading p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.manage-dialog-close {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: white;
+  color: var(--ink);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.manage-dialog-close:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.manage-dialog > .manage-form {
+  margin: 0;
+  padding: clamp(20px, 3vw, 28px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 640px) {
+  .manage-dialog-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .manage-dialog {
+    max-height: 94vh;
+    border-radius: 22px 22px 0 0;
+  }
+
+  .manage-dialog-heading {
+    padding: 18px;
+  }
+
+  .manage-dialog > .manage-form {
+    padding: 18px 18px 26px;
+  }
+}
